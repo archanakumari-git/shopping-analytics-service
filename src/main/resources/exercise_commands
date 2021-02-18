@@ -1,0 +1,7 @@
+1.Use grpcurl to add 1 pencil to a cart:
+
+grpcurl -d '{\"cartId\":\"cart1\", \"itemId\":\"pencil\", \"quantity\":1}' -plaintext 127.0.0.1:8101 shoppingcart.ShoppingCartService/AddItem
+
+2. Look at the log output in the terminal of the shopping-analytics-service. You should see the logging from the AddItem, showing that the new service consumed the event from Kafka:
+
+ItemAdded: 1 pencil to cart cart1
